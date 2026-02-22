@@ -1,4 +1,10 @@
-import { moveUpward, isArray, isNumber, moveDownward } from "./utils";
+import {
+  moveUpward,
+  isArray,
+  isNumber,
+  moveDownward,
+  extractLowestSetBit,
+} from "./utils";
 import { SumGroup } from "./monoid";
 
 /**
@@ -64,6 +70,26 @@ export class BinaryIndexedTree {
     } else {
       throw new TypeError("First argument must be of type number or array.");
     }
+  }
+
+  /**
+   * Returns the inclusive range [start, end] covered by internal node at index `idx`.
+   *
+   * In Binary Indexed Tree, each index `idx` stores the arregated value over a range of size LSB(idx).
+   * where LSB = extractLowestSetBit(idx).
+   *
+   * The covered range is:
+   *  [idx - LSB(idx) + 1, idx]
+   *
+   * @param {number} idx - 1-based internal index
+   * @returns {[number, number]} Inclusive range [start, end]
+   *
+   * @example
+   * idx = 6 (binary 100)
+   * LSB(6) = 2
+   */
+  getCoveredRangeFromIndex(idx) {
+    return [idx - extractLowestSetBit(idx) + 1, idx];
   }
 
   /**

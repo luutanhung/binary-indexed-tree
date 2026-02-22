@@ -20,9 +20,12 @@ describe("isolateLastBit", () => {
   });
 
   test("move upward in bit", () => {
-    console.log("Initial value for num:", num, getBinary(num));
-    num = moveUpward(num);
-    console.log("After moving upward:", num, getBinary(num));
+    console.log(getBinary(3));
+    console.log("moveUpward(1)=", moveUpward(1), getBinary(moveUpward(1)));
+
+    // [2 - LSD(2) + 1, 2];
+    console.log("moveUpward(2)=", moveUpward(2), getBinary(moveUpward(2)));
+    console.log("moveUpward(4)=", moveUpward(4), getBinary(moveUpward(4)));
   });
 
   test("move downward in bit", () => {
