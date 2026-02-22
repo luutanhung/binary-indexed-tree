@@ -1,8 +1,11 @@
 {
   "name": "binary-indexed-tree",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
+  "main": "./dist/binary-indexed-tree.cjs.js",
+  "module": "./dist/binary-indexed-tree.es.js",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,5 +15,14 @@
   "devDependencies": {
     "vite": "^7.3.1",
     "vitest": "^4.0.18"
-  }
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/binary-indexed-tree.es.js",
+      "require": "./dist/binary-indexed-tree.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ]
 }
