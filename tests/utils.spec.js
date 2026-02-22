@@ -1,11 +1,33 @@
-import { describe, test, expect } from "vitest";
+import { beforeEach, describe, expect, test } from "vitest";
 
-import { getBinary, isolateLastBit } from "../src/utils";
+import {
+  extractLowestSetBit,
+  getBinary,
+  moveDownward,
+  moveUpward,
+} from "../src";
 
 describe("isolateLastBit", () => {
+  let num;
+
+  beforeEach(() => {
+    num = 52;
+  });
+
   test("isolate the last bit of index", () => {
-    const num = 52;
-    const isolated = isolateLastBit(num);
-    expect(isolated).toBe(4);
+    const lowestSetBit = extractLowestSetBit(num);
+    expect(lowestSetBit).toBe(4);
+  });
+
+  test("move upward in bit", () => {
+    console.log("Initial value for num:", num, getBinary(num));
+    num = moveUpward(num);
+    console.log("After moving upward:", num, getBinary(num));
+  });
+
+  test("move downward in bit", () => {
+    console.log("Initial value for num:", num, getBinary(num));
+    num = moveDownward(num);
+    console.log("After moving downward:", num, getBinary(num));
   });
 });
