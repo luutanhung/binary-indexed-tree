@@ -1,11 +1,10 @@
 {
   "name": "@lth/binary-indexed-tree",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "main": "./dist/binary-indexed-tree.cjs.js",
   "module": "./dist/binary-indexed-tree.es.js",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
