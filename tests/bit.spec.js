@@ -1,6 +1,6 @@
 import { describe, test } from "vitest";
 
-import { BinaryIndexedTree } from "../src";
+import { BinaryIndexedTree } from "../lib";
 
 describe("BinaryIndexedTree", () => {
   test("construct a binary indexed tree from an array-like structure", () => {

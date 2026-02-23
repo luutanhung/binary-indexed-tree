@@ -5,7 +5,7 @@ import {
   getBinary,
   moveDownward,
   moveUpward,
-} from "../src";
+} from "../lib";
 
 describe("isolateLastBit", () => {
   let num;
